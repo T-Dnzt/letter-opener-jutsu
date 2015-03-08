@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    UserMailer.example(User.new(email: 'bo@samurails.com')).deliver
     @users = User.all
   end
 
